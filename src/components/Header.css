@@ -1,0 +1,18 @@
+.Header {
+    border-bottom: 1px solid lightgray;
+}
+
+.Header-logo-container {
+    padding: 12px 0 8px 0;
+}
+
+.Header-logo {
+    font-family: 'Alfa Slab One', cursive;
+    font-size: 32px;
+    line-height: 32px;
+}
+
+.Header-subtext {
+    font-size: 14px;
+    line-height: 14px;
+}
