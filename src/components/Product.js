@@ -1,7 +1,10 @@
 import { Card } from "react-bootstrap";
-import 'holderjs';
+import { run as runHolder } from 'holderjs/holder';
+import { useEffect } from "react";
 
 export default function Product(props) {
+    useEffect(() => { runHolder('image-class-name'); });
+
     return (
         <Card>
             <Card.Img variant="top" src="holder.js/100px180" />

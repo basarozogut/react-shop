@@ -1,6 +1,7 @@
 import './Header.css';
 import { Fragment } from "react";
 import { Col, Row } from 'react-bootstrap';
+import ProductSearch from './ProductSearch';
 
 export default function Header() {
     return (
@@ -16,7 +17,9 @@ export default function Header() {
                         </div>
                     </Col>
                     <Col md={9}>
-                        search box here
+                        <div className='Header-search-container'>
+                            <ProductSearch />
+                        </div>
                     </Col>
                 </Row>
             </div>

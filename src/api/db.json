@@ -1,0 +1,44 @@
+{
+    "products": [
+        {
+            "id": 1,
+            "title": "Choc-o-Milk",
+            "shortDescription": "Chocolate with milk.",
+            "price": 4.99,
+            "imageUrl": "",
+            "category": "food"
+        },
+        {
+            "id": 2,
+            "title": "Crunchy Rings",
+            "shortDescription": "Crunchy corn flakes.",
+            "price": 7.99,
+            "imageUrl": "",
+            "category": "food"
+        },
+        {
+            "id": 100,
+            "title": "SmartSoft LED TV",
+            "shortDescription": "Smart LED TV.",
+            "price": 399.99,
+            "imageUrl": "",
+            "category": "electronics"
+        },
+        {
+            "id": 101,
+            "title": "MyPhone 9",
+            "shortDescription": "Small smart phone.",
+            "price": 249.99,
+            "imageUrl": "",
+            "category": "electronics"
+        },
+        {
+            "id": 102,
+            "title": "MyPhone 9 Max",
+            "shortDescription": "Large smart phone.",
+            "price": 299.99,
+            "imageUrl": "",
+            "category": "electronics"
+        }
+    ]
+}

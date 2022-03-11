@@ -1,7 +1,7 @@
 import './App.css';
-import Product from './components/Product';
 import { Col, Container, Row } from 'react-bootstrap';
 import Header from './components/Header';
+import ProductBrowser from './components/ProductBrowser';
 
 const products = [
   {
@@ -23,13 +23,7 @@ function App() {
         <Row>
           <Col md={3}>Cart Will Be Here</Col>
           <Col md={9}>
-            <Row xs={1} md={2} className="g-4">
-              {products.map((product) => (
-                <Col md={4} key={product.id}>
-                  <Product product={product} />
-                </Col>
-              ))}
-            </Row>
+            <ProductBrowser searchCriteria={""}/>
           </Col>
         </Row>
       </main>
