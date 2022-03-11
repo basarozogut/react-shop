@@ -14,7 +14,6 @@ export default function Header() {
                             </div>
                             <div className='Header-subtext'>Your number one address for e-commerce.</div>
                         </div>
-
                     </Col>
                     <Col md={9}>
                         search box here
