@@ -1,5 +1,12 @@
 import axios from 'axios';
 
-export default axios.create({
+const api = axios.create({
     baseURL: `http://localhost:3001/`
 });
+
+export const fetchProducts = async (searchInput) => {
+    const query = searchInput ? `?q=${searchInput}` : "";
+    const {data} = await api.get(`products${query}`);
+
+    return data;
+}

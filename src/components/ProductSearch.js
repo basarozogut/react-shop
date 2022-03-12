@@ -10,7 +10,7 @@ export default function ProductSearch(props) {
 
     function handleSubmit(e) {
         e.preventDefault();
-        // TODO submit search to app
+        props.onSearchInputSubmit(searchInput);
     }
 
     return (
