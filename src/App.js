@@ -4,6 +4,7 @@ import Logo from './components/Logo';
 import ProductBrowser from './components/ProductBrowser';
 import ProductSearch from './components/ProductSearch'
 import { useState } from 'react';
+import Cart from './components/Cart';
 
 function App() {
   const [searchInput, setSearchInput] = useState("");
@@ -30,7 +31,9 @@ function App() {
       </header>
       <main>
         <Row>
-          <Col md={3}>Cart Will Be Here</Col>
+          <Col md={3}>
+            <Cart />
+          </Col>
           <Col md={9}>
             <ProductBrowser searchInput={searchInput} />
           </Col>
