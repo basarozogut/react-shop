@@ -4,10 +4,20 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import ProductBrowser from './components/ProductBrowser'
+import QueryStringWrapper from './components/QueryStringWrapper';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<App />}>
+          <Route index element={<ProductBrowser />} />
+          <Route path='products' element={<QueryStringWrapper keysToMatch={['filter']} render={(props) => (<ProductBrowser searchInput={props.filter} />)} />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
   </React.StrictMode>,
   document.getElementById('root')
 );

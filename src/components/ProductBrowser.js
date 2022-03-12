@@ -3,7 +3,7 @@ import { Col, Row } from "react-bootstrap";
 import { fetchProducts } from "../api/shopApi";
 import Product from "./Product";
 
-export default function ProductBrowser({ searchInput }) {
+export default function ProductBrowser({searchInput}) {
     const [products, setProducts] = useState([]);
 
     useEffect(() => {

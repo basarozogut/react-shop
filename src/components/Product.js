@@ -1,6 +1,5 @@
 import placeholder from "../images/product-placeholder.svg"
 import { Card } from "react-bootstrap";
-import { useEffect } from "react";
 
 export default function Product(props) {
     return (

@@ -1,16 +1,20 @@
 import './App.css';
 import { Col, Container, Row } from 'react-bootstrap';
 import Logo from './components/Logo';
-import ProductBrowser from './components/ProductBrowser';
 import ProductSearch from './components/ProductSearch'
-import { useState } from 'react';
 import Cart from './components/Cart';
+import UserPanel from './components/UserPanel';
+import { Outlet, useNavigate } from 'react-router-dom';
 
 function App() {
-  const [searchInput, setSearchInput] = useState("");
+  const navigate = useNavigate();
 
   function handleSearchInputSubmit(input) {
-    setSearchInput(input);
+    if (input) {
+      navigate(`/products?filter=${input}`)
+    } else {
+      navigate(`/products`)
+    }
   }
 
   return (
@@ -32,10 +36,11 @@ function App() {
       <main>
         <Row>
           <Col md={3}>
+            <UserPanel />
             <Cart />
           </Col>
           <Col md={9}>
-            <ProductBrowser searchInput={searchInput} />
+            <Outlet />
           </Col>
         </Row>
       </main>
