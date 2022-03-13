@@ -10,3 +10,9 @@ export const fetchProducts = async (searchInput) => {
 
     return data;
 }
+
+export const fetchProduct = async (productId) => {
+    const {data} = await api.get(`products/${productId}`);
+
+    return data;
+}
