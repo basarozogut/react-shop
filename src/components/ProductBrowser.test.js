@@ -1,9 +1,9 @@
 import React from "react";
 import ProductBrowser from "./ProductBrowser";
+import TestWrapper from "./TestWrapper";
 import { rest } from 'msw'
 import { setupServer } from 'msw/node'
 import { render, waitFor, screen } from "@testing-library/react";
-
 const mockProducts = [
     {
         "id": 1,
@@ -26,7 +26,11 @@ it("should render no product warning if no products are found", async () => {
         return res(ctx.status(200), ctx.json([]))
     }));
 
-    render(<ProductBrowser searchInput={"Television"} />);
+    render(
+        <TestWrapper>
+            <ProductBrowser searchInput={"Television"} />
+        </TestWrapper>
+    );
 
     await waitFor(() => {
         expect(screen.getByTestId("no-products-warning")).toBeInTheDocument();
@@ -38,7 +42,11 @@ test("should render products if any product is found", async () => {
         return res(ctx.status(200), ctx.json(mockProducts))
     }));
 
-    render(<ProductBrowser searchInput={"Cho"} />);
+    render(
+        <TestWrapper>
+            <ProductBrowser searchInput={"Cho"} />
+        </TestWrapper>
+    );
 
     await waitFor(() => {
         expect(screen.getByTestId("product")).toBeInTheDocument();

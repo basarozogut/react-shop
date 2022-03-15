@@ -1,5 +1,6 @@
 import React from "react";
 import Product from "./Product";
+import TestWrapper from "./TestWrapper";
 import { render, screen, waitFor } from "@testing-library/react";
 
 it("should render product data", async () => {
@@ -12,12 +13,17 @@ it("should render product data", async () => {
         "category": "food"
     };
 
-    render(<Product product={mockProduct} />);
+    render(
+        <TestWrapper>
+            <Product product={mockProduct} />
+        </TestWrapper>
+    );
 
     await waitFor(() => {
         expect(screen.getByTestId("product")).toBeInTheDocument();
         expect(screen.getByTestId("product-title").innerHTML).toContain("Choc-o-Milk");
         expect(screen.getByTestId("product-title").innerHTML).toContain("4.99");
         expect(screen.getByTestId("product-short-description").innerHTML).toContain("Chocolate with milk.");
+        expect(screen.queryAllByTestId("product-link").length).toEqual(2);
     });
 });
