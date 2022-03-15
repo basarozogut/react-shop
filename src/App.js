@@ -4,10 +4,11 @@ import Logo from './components/Logo';
 import ProductSearch from './components/ProductSearch'
 import Cart from './components/Cart';
 import UserPanel from './components/UserPanel';
-import { Outlet, useNavigate } from 'react-router-dom';
+import { Outlet, useNavigate, useSearchParams } from 'react-router-dom';
 
 function App() {
   const navigate = useNavigate();
+  const [searchParams] = useSearchParams();
 
   function handleSearchInputSubmit(input) {
     if (input) {
@@ -28,7 +29,10 @@ function App() {
           </Col>
           <Col md={9}>
             <div className='App-header-search-container'>
-              <ProductSearch onSearchInputSubmit={handleSearchInputSubmit} />
+              <ProductSearch
+                initialSearchInput={searchParams.get('filter')}
+                onSearchInputSubmit={handleSearchInputSubmit}
+              />
             </div>
           </Col>
         </Row>
