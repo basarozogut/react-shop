@@ -6,7 +6,6 @@ import reportWebVitals from './reportWebVitals';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import ProductBrowser from './components/ProductBrowser'
-import QueryStringWrapper from './components/QueryStringWrapper';
 import ProductDetails from './components/ProductDetails';
 
 ReactDOM.render(
@@ -15,7 +14,7 @@ ReactDOM.render(
       <Routes>
         <Route path="/" element={<App />}>
           <Route index element={<ProductBrowser />} />
-          <Route path='products' element={<QueryStringWrapper keysToMatch={['filter']} render={(props) => (<ProductBrowser searchInput={props.filter} />)} />} />
+          <Route path='products' element={<ProductBrowser />} />
           <Route path="products/:productId" element={<ProductDetails />} />
           <Route
             path="*"

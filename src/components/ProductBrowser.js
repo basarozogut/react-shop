@@ -1,10 +1,13 @@
 import { useState, useEffect } from "react";
 import { Col, Row } from "react-bootstrap";
+import { useSearchParams } from "react-router-dom";
 import { fetchProducts } from "../api/shopApi";
 import Product from "./Product";
 
-export default function ProductBrowser({searchInput}) {
+export default function ProductBrowser() {
     const [products, setProducts] = useState([]);
+    let [searchParams] = useSearchParams();
+    const searchInput = searchParams.get('filter');
 
     useEffect(() => {
         let mounted = true;
