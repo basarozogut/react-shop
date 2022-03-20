@@ -4,13 +4,15 @@ import { Form } from "react-bootstrap";
 export default function ProductSearch(props) {
     const [searchInput, setSearchInput] = useState(props.initialSearchInput ?? "");
 
-    function handleOnSearchInputChange(e){
+    function handleOnSearchInputChange(e) {
         setSearchInput(e.target.value);
     }
 
     function handleSubmit(e) {
         e.preventDefault();
-        props.onSearchInputSubmit(searchInput);
+        if (props.onSearchInputSubmit) {
+            props.onSearchInputSubmit(searchInput);
+        }
     }
 
     return (
