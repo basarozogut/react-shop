@@ -1,3 +1,5 @@
+import './ProductDetails.css';
+import placeholder from "../images/product-placeholder-big.jpg"
 import { useParams } from "react-router-dom";
 import { fetchProduct } from "../api/shopApi";
 import useApiCall from "../hooks/useApiCall";
@@ -15,5 +17,14 @@ export default function ProductDetails() {
         return <p>Loading...</p>
     }
 
-    return <p>{product.title}</p>
+    return (
+        <div className="ProductDetails">
+            <h2 className='ProductDetails-title'>{product.title} ({product.price})</h2>
+            <p className='ProductDetails-short-description'>{product.shortDescription}</p>
+            <figure>
+                <img className="ProductDetails-image" src={placeholder} />
+            </figure>
+            <p>{product.longDescription}</p>
+        </div>
+    );
 }

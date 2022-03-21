@@ -1,4 +1,4 @@
-import placeholder from "../images/product-placeholder.svg"
+import placeholder from "../images/product-placeholder.jpg"
 import { Card } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { Button } from "react-bootstrap";

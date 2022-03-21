@@ -1,6 +1,7 @@
 .App-header {
     border-bottom: 1px solid lightgray;
     padding: 0 0 8px 0;
+    background-color: white;
 }
 
 .App-header-logo-container {
@@ -13,4 +14,8 @@
 
 .App-header-user-panel-container {
     padding: 12px 0 0 0;
+}
+
+.App-outlet-container {
+    padding: 10px 0 10px 0;
 }

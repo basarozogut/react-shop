@@ -23,7 +23,7 @@ function App() {
 
   return (
     <Container>
-      <header className='App-header'>
+      <header className='App-header sticky-top'>
         <Row>
           <Col md={3}>
             <div className='App-header-logo-container'>
@@ -41,14 +41,15 @@ function App() {
         </Row>
       </header>
       <main>
-        <CartContext.Provider value={{cartItems, setCartItems}}>
+        <CartContext.Provider value={{ cartItems, setCartItems }}>
           <Row>
             <Col md={3}>
-              <UserPanel />
               <Cart />
             </Col>
             <Col md={9}>
-              <Outlet />
+              <div className='App-outlet-container'>
+                <Outlet />
+              </div>
             </Col>
           </Row>
         </CartContext.Provider>

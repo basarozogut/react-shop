@@ -1,0 +1,19 @@
+.ProductDetails {
+
+}
+
+.ProductDetails-title {
+    margin: 0;
+}
+
+.ProductDetails-image {
+    width: 100%;
+}
+
+.ProductDetails-short-description {
+
+}
+
+.ProductDetails figure {
+    margin-bottom: 8px;
+}
