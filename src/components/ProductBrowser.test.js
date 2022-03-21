@@ -4,6 +4,8 @@ import TestWrapper from "./TestWrapper";
 import { rest } from 'msw'
 import { setupServer } from 'msw/node'
 import { render, waitFor, screen } from "@testing-library/react";
+import { makeAbsoluteUrl } from "../api/shopApi";
+
 const mockProducts = [
     {
         "id": 1,
@@ -22,13 +24,13 @@ afterEach(() => server.resetHandlers());
 afterAll(() => server.close());
 
 it("should render no product warning if no products are found", async () => {
-    server.use(rest.get('http://localhost:3001/products', (req, res, ctx) => {
+    server.use(rest.get(makeAbsoluteUrl('/products'), (req, res, ctx) => {
         return res(ctx.status(200), ctx.json([]))
     }));
 
     render(
         <TestWrapper>
-            <ProductBrowser searchInput={"Television"} />
+            <ProductBrowser />
         </TestWrapper>
     );
 
@@ -38,13 +40,13 @@ it("should render no product warning if no products are found", async () => {
 });
 
 test("should render products if any product is found", async () => {
-    server.use(rest.get('http://localhost:3001/products', (req, res, ctx) => {
+    server.use(rest.get(makeAbsoluteUrl('/products'), (req, res, ctx) => {
         return res(ctx.status(200), ctx.json(mockProducts))
     }));
 
     render(
         <TestWrapper>
-            <ProductBrowser searchInput={"Cho"} />
+            <ProductBrowser />
         </TestWrapper>
     );
 

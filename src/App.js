@@ -5,10 +5,13 @@ import ProductSearch from './components/ProductSearch'
 import Cart from './components/Cart';
 import UserPanel from './components/UserPanel';
 import { Outlet, useNavigate, useSearchParams } from 'react-router-dom';
+import { CartContext } from './context/cartContext';
+import { useState } from "react";
 
 function App() {
   const navigate = useNavigate();
   const [searchParams] = useSearchParams();
+  const [cartItems, setCartItems] = useState([]);
 
   function handleSearchInputSubmit(input) {
     if (input) {
@@ -38,15 +41,17 @@ function App() {
         </Row>
       </header>
       <main>
-        <Row>
-          <Col md={3}>
-            <UserPanel />
-            <Cart />
-          </Col>
-          <Col md={9}>
-            <Outlet />
-          </Col>
-        </Row>
+        <CartContext.Provider value={{cartItems, setCartItems}}>
+          <Row>
+            <Col md={3}>
+              <UserPanel />
+              <Cart />
+            </Col>
+            <Col md={9}>
+              <Outlet />
+            </Col>
+          </Row>
+        </CartContext.Provider>
       </main>
     </Container>
   );
