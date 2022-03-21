@@ -1,0 +1,8 @@
+.AddToCartButton {
+    transform-origin: center;
+    transition: .05s ease-out;
+}
+
+.AddToCartButton:active {
+    transform: scale(.9);
+}
