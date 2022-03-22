@@ -4,6 +4,21 @@
     margin-top: 10px;
 }
 
-.Cart-product {
-    
+.Cart ul {
+    padding: 0;
+}
+
+.Cart-itemlist {
+    margin-bottom: 8px;
+}
+
+.Cart-item {
+    padding: 5px 0 5px 0;
+    border-bottom: 1px solid #ccc;
+    clear:both;
+    overflow: hidden;
+}
+
+.Cart-item-remove {
+    float: right;
 }

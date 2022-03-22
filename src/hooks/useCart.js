@@ -29,14 +29,14 @@ export default function useCart() {
         });
     }
 
-    function getCartItemById(id) {
-        return cartItems.find(item => item.id === id);
+    function removeCartItem(id) {
+        setCartItems(prev => prev.filter(p => p.id !== id));
     }
 
     return { 
         cartItems,
+        currency,
         addCartItem,
-        getCartItemById,
-        currency
+        removeCartItem       
      };
 }

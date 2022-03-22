@@ -24,7 +24,7 @@ export default function ProductDetails() {
             <h2 className='ProductDetails-title'>{product.title} (<PriceDisplay value={product.price} />)</h2>
             <p className='ProductDetails-short-description'>{product.shortDescription}</p>
             <figure>
-                <img className="ProductDetails-image" src={placeholder} />
+                <img className="ProductDetails-image" src={placeholder} alt={product.title} />
             </figure>
             <p>{product.longDescription}</p>
             <p><AddToCartButton productId={product.id} /></p>
