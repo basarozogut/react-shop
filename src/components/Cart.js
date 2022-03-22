@@ -26,7 +26,7 @@ export default function Cart() {
                 <Fragment>
                     <ul className='list-unstyled'>
                         {products.map(product => (
-                            <li key={product.id}>{product.title} Amount: {getCartItemById(product.id).amount}</li>
+                            <li key={product.id}>{product.title} ({getCartItemById(product.id).amount} pcs)</li>
                         ))}
                     </ul>
                     <div className='Cart-total'><strong>Total:</strong> <PriceDisplay value={total} /></div>

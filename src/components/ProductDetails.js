@@ -4,6 +4,7 @@ import { useParams } from "react-router-dom";
 import { fetchProduct } from "../api/shopApi";
 import useApiCall from "../hooks/useApiCall";
 import PriceDisplay from './PriceDisplay';
+import AddToCartButton from './AddToCartButton';
 
 export default function ProductDetails() {
     const params = useParams();
@@ -26,6 +27,7 @@ export default function ProductDetails() {
                 <img className="ProductDetails-image" src={placeholder} />
             </figure>
             <p>{product.longDescription}</p>
+            <p><AddToCartButton productId={product.id} /></p>
         </div>
     );
 }
