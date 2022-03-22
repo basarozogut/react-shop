@@ -12,6 +12,7 @@ function App() {
   const navigate = useNavigate();
   const [searchParams] = useSearchParams();
   const [cartItems, setCartItems] = useState([]);
+  const [cartStateLoaded, setCartStateLoaded] = useState(false);
 
   function handleSearchInputSubmit(input) {
     if (input) {
@@ -41,7 +42,7 @@ function App() {
         </Row>
       </header>
       <main>
-        <CartContext.Provider value={{ cartItems, setCartItems, currency: '$' }}>
+        <CartContext.Provider value={{ cartItems, setCartItems, currency: '$', cartStateLoaded, setCartStateLoaded }}>
           <Row>
             <Col md={3}>
               <Cart />
