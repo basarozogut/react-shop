@@ -41,7 +41,7 @@ function App() {
         </Row>
       </header>
       <main>
-        <CartContext.Provider value={{ cartItems, setCartItems }}>
+        <CartContext.Provider value={{ cartItems, setCartItems, currency: '$' }}>
           <Row>
             <Col md={3}>
               <Cart />

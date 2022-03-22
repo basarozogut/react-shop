@@ -3,6 +3,7 @@ import './Cart.css';
 import useApiCall from "../hooks/useApiCall";
 import { fetchProductsWithId } from "../api/shopApi";
 import { Fragment } from 'react';
+import PriceDisplay from "./PriceDisplay"
 
 export default function Cart() {
     const { cartItems, getCartItemById } = useCart();
@@ -23,19 +24,19 @@ export default function Cart() {
         content =
             (
                 <Fragment>
-                    <ul>
+                    <ul className='list-unstyled'>
                         {products.map(product => (
                             <li key={product.id}>{product.title} Amount: {getCartItemById(product.id).amount}</li>
                         ))}
                     </ul>
-                    <div className='Cart-total'><strong>Total:</strong> {total}</div>
+                    <div className='Cart-total'><strong>Total:</strong> <PriceDisplay value={total} /></div>
                 </Fragment>
             );
     }
 
     return (
         <div className="Cart">
-            <h3>Cart</h3>
+            <h3>Your Cart</h3>
             {content}
         </div>
     );

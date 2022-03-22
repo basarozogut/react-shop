@@ -3,6 +3,7 @@ import placeholder from "../images/product-placeholder-big.jpg"
 import { useParams } from "react-router-dom";
 import { fetchProduct } from "../api/shopApi";
 import useApiCall from "../hooks/useApiCall";
+import PriceDisplay from './PriceDisplay';
 
 export default function ProductDetails() {
     const params = useParams();
@@ -19,7 +20,7 @@ export default function ProductDetails() {
 
     return (
         <div className="ProductDetails">
-            <h2 className='ProductDetails-title'>{product.title} ({product.price})</h2>
+            <h2 className='ProductDetails-title'>{product.title} (<PriceDisplay value={product.price} />)</h2>
             <p className='ProductDetails-short-description'>{product.shortDescription}</p>
             <figure>
                 <img className="ProductDetails-image" src={placeholder} />

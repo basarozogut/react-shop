@@ -2,6 +2,7 @@ import placeholder from "../images/product-placeholder.jpg"
 import { Card } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import AddToCartButton from "./AddToCartButton";
+import PriceDisplay from "./PriceDisplay";
 
 export default function Product({ product }) {
     function makeLinkToProductDetails(inner) {
@@ -12,7 +13,7 @@ export default function Product({ product }) {
         <Card data-testid="product">
             {makeLinkToProductDetails(<Card.Img variant="top" src={placeholder} />)}
             <Card.Body>
-                <Card.Title data-testid="product-title">{makeLinkToProductDetails(product.title)} ({product.price})</Card.Title>
+                <Card.Title data-testid="product-title">{makeLinkToProductDetails(product.title)} (<PriceDisplay value={product.price} />)</Card.Title>
                 <Card.Text data-testid="product-short-description">
                     {product.shortDescription}
                 </Card.Text>

@@ -38,7 +38,7 @@ test("should render product if product is found", async () => {
 
     await waitFor(() => {
         expect(screen.getByText(/Choc-o-Milk/i)).toBeInTheDocument();
-        expect(screen.getByText(/4\.99/i)).toBeInTheDocument();
+        expect(screen.getByText(/\$4\.99/i)).toBeInTheDocument();
         expect(screen.getByText(/Chocolate with milk\./i)).toBeInTheDocument();
         expect(screen.getByText(/Delicious milk\./i)).toBeInTheDocument();
     });

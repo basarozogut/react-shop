@@ -2,7 +2,7 @@ import { useContext } from 'react';
 import { CartContext } from '../context/cartContext';
 
 export default function useCart() {
-    const { cartItems, setCartItems } = useContext(CartContext);
+    const { cartItems, setCartItems, currency } = useContext(CartContext);
 
     function addCartItem(item) {
         setCartItems(prev => {
@@ -36,6 +36,7 @@ export default function useCart() {
     return { 
         cartItems,
         addCartItem,
-        getCartItemById
+        getCartItemById,
+        currency
      };
 }
