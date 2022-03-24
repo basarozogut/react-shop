@@ -20,11 +20,11 @@ export default function Cart() {
 
     if (error) {
         console.log(error);
-        content = <p>There was an error while trying to fetch the products.</p>;
+        content = <div>There was an error while trying to fetch the products.</div>;
     } else if (!products) {
-        content = <p>Loading...</p>
+        content = <div>Loading...</div>
     } else if (products.length <= 0) {
-        content = <p>Cart is empty.</p>
+        content = <div>Cart is empty.</div>
     } else {
         const total = cartItems.reduce((prevItem, item) => {
             const product = getProductById(item.id);
