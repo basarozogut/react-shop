@@ -35,7 +35,7 @@ it("should add to cart when button is clicked", () => {
 
     render(
         <TestWrapper>
-            <CartContext.Provider value={{setCartItems}}>
+            <CartContext.Provider value={{ setCartItems, cartStateLoaded: true }}>
                 <Product product={mockProduct} />
             </CartContext.Provider>
         </TestWrapper>

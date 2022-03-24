@@ -48,7 +48,7 @@ export default function Cart() {
                             }
 
                             return (
-                                <li className='Cart-item' key={product.id}>{product.title} ({item.amount} pcs) <Button className='Cart-item-remove' variant="danger" size="sm" onClick={() => removeCartItem(product.id)}><Trash /></Button></li>
+                                <li className='Cart-item' key={product.id}>{product.title} ({item.amount} {item.amount > 1 ? "pcs" : "pc"}) <Button className='Cart-item-remove' variant="danger" size="sm" onClick={() => removeCartItem(product.id)}><Trash /></Button></li>
                             );
                         })}
                     </ul>

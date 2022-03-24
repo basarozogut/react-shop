@@ -31,7 +31,9 @@ test("should render product if product is found", async () => {
     render(
         <MemoryRouter initialEntries={["/products/1"]}>
             <Routes>
-                <Route path='products/:productId' element={<ProductDetails />} />
+                <Route path='products/:productId' element={
+                    <ProductDetails />
+                } />
             </Routes>
         </MemoryRouter>
     );

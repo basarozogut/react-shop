@@ -1,4 +1,3 @@
-import { useState, useEffect } from "react";
 import { Col, Row } from "react-bootstrap";
 import { useSearchParams } from "react-router-dom";
 import { fetchProducts } from "../api/shopApi";

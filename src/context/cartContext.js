@@ -4,5 +4,5 @@ export const CartContext = React.createContext({
     cartItems: [],
     setCartItems: () => {},
     currency: '$',
-    cartStateLoaded: false
+    cartStateLoaded: true
 });

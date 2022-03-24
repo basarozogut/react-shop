@@ -5,7 +5,7 @@ export default function useCart() {
     const { cartItems, setCartItems, currency, cartStateLoaded, setCartStateLoaded } = useContext(CartContext);
 
     useEffect(() => {
-        if (localStorage.getItem("cart") && !cartStateLoaded) {
+        if (!cartStateLoaded && localStorage.getItem("cart")) {
             const deserialized = JSON.parse(localStorage.getItem("cart"));
             setCartItems(deserialized);
             setCartStateLoaded(true);

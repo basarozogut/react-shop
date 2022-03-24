@@ -67,16 +67,16 @@ it("should render products and amounts if cart is not empty", async () => {
         }];
 
     render(
-        <CartContext.Provider value={{ cartItems }}>
+        <CartContext.Provider value={{ cartItems, cartStateLoaded: true }}>
             <Cart />
         </CartContext.Provider>
     );
 
     await waitFor(() => {
         expect(screen.getByText(/Choc-o-Milk/i)).toBeInTheDocument();
-        expect(screen.getByText(/Amount: 1/i)).toBeInTheDocument();
+        expect(screen.getByText(/1 pc/i)).toBeInTheDocument();
         expect(screen.getByText(/Corn Flakes/i)).toBeInTheDocument();
-        expect(screen.getByText(/Amount: 5/i)).toBeInTheDocument();
+        expect(screen.getByText(/5 pcs/i)).toBeInTheDocument();
         expect(screen.getByText(/Total:.*/i)).toBeInTheDocument();
     });
 });
@@ -86,7 +86,17 @@ it("should render loading if products are null", async () => {
         return res(ctx.status(200), ctx.json(null));
     }));
 
-    render(<Cart />);
+    const cartItems = [
+        {
+            id: 1,
+            amount: 1
+        }];
+
+    render(
+        <CartContext.Provider value={{ cartItems, cartStateLoaded: true }}>
+            <Cart />
+        </CartContext.Provider>
+    );
 
     await waitFor(() => {
         expect(screen.getByText(/Loading/i)).toBeInTheDocument();
@@ -105,7 +115,7 @@ it("should render error if request has failed", async () => {
         }];
 
     render(
-        <CartContext.Provider value={{ cartItems }}>
+        <CartContext.Provider value={{ cartItems, cartStateLoaded: true }}>
             <Cart />
         </CartContext.Provider>
     );
