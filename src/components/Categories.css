@@ -1,0 +1,8 @@
+.Categories {
+    border-top: 1px solid #ccc;   
+    margin-top: 10px;
+}
+
+.Categories a {
+    color: gray;
+}

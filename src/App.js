@@ -7,6 +7,7 @@ import UserPanel from './components/UserPanel';
 import { Outlet, useNavigate, useSearchParams } from 'react-router-dom';
 import { CartContext } from './context/cartContext';
 import { useState } from "react";
+import Categories from './components/Categories';
 
 function App() {
   const navigate = useNavigate();
@@ -38,6 +39,11 @@ function App() {
                 onSearchInputSubmit={handleSearchInputSubmit}
               />
             </div>
+          </Col>
+        </Row>
+        <Row>
+          <Col>
+            <Categories />
           </Col>
         </Row>
       </header>

@@ -7,7 +7,8 @@ import useApiCall from "../hooks/useApiCall";
 export default function ProductBrowser() {
     let [searchParams] = useSearchParams();
     const searchInput = searchParams.get('filter');
-    const [products, error] = useApiCall(() => fetchProducts(searchInput), null, [searchInput]);
+    const category = searchParams.get('category');
+    const [products, error] = useApiCall(() => fetchProducts(searchInput, category), null, [searchInput, category]);
 
     if (error) {
         console.log(error);

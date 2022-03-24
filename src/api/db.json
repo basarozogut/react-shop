@@ -50,5 +50,27 @@
             "detailImageUrls": [],
             "longDescription": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In nibh dui, varius sit amet ex non, interdum imperdiet purus. Nunc sit amet sollicitudin elit. Pellentesque justo augue, ultricies id fringilla at, commodo ut mauris. Praesent efficitur pharetra lorem vel accumsan. Aenean sollicitudin euismod magna et iaculis. Maecenas id aliquam nisi, a lobortis velit. Aliquam nec egestas orci. Curabitur auctor felis ut porttitor aliquet. Suspendisse potenti."
         }
+    ],
+    "categories": [
+        {
+            "id": 1,
+            "title": "Food",
+            "slug": "food"
+        },
+        {
+            "id": 2,
+            "title": "Electronics",
+            "slug": "electronics"
+        },
+        {
+            "id": 3,
+            "title": "Applicances",
+            "slug": "appliances"
+        },
+        {
+            "id": 4,
+            "title": "Furniture",
+            "slug": "furniture"
+        }
     ]
 }
