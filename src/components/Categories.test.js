@@ -41,3 +41,19 @@ it("should render categories", async () => {
         expect(screen.getByText(/Food/)).toBeInTheDocument();
     });
 });
+
+it("should render placeholders", async () => {
+    server.use(rest.get(makeAbsoluteUrl('/categories'), (req, res, ctx) => {
+        return res(ctx.status(200), ctx.json(null))
+    }));
+
+    render(
+        <TestWrapper>
+            <Categories />
+        </TestWrapper>
+    );
+
+    await waitFor(() => {
+        expect(screen.getByTestId('category-placeholder')).toBeInTheDocument();
+    });
+});

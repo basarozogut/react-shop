@@ -6,3 +6,7 @@
 .Categories a {
     color: gray;
 }
+
+.Categories-nav-item-placeholder {
+    margin: 0 10px 0 0;
+}
