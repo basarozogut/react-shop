@@ -34,7 +34,7 @@ export default function ProductBrowser() {
     return (
         <Row xs={1} md={2} className="g-4">
             {products.map((product) => (
-                <Col md={4} key={product.id}>
+                <Col xl={4} md={6} key={product.id}>
                     <Product product={product} />
                 </Col>
             ))}

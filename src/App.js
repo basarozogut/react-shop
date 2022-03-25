@@ -50,10 +50,10 @@ function App() {
       <main>
         <CartContext.Provider value={{ cartItems, setCartItems, currency: '$', cartStateLoaded, setCartStateLoaded }}>
           <Row>
-            <Col md={3}>
+            <Col xl={3} md={4}>
               <Cart />
             </Col>
-            <Col md={9}>
+            <Col xl={9} md={8}>
               <div className='App-outlet-container'>
                 <Outlet />
               </div>
