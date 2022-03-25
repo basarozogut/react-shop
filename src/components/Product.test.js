@@ -30,6 +30,18 @@ it("should render product data", async () => {
     });
 });
 
+it("should render placeholders when loading", async () => {
+    render(
+        <TestWrapper>
+            <Product loading={true} />
+        </TestWrapper>
+    );
+
+    await waitFor(() => {
+        expect(screen.getByTestId("product-loading")).toBeInTheDocument();
+    });
+});
+
 it("should add to cart when button is clicked", () => {
     const setCartItems = jest.fn();
 

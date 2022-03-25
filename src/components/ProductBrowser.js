@@ -16,7 +16,15 @@ export default function ProductBrowser() {
     }
 
     if (!products) {
-        return <p>Loading...</p>
+        return (
+            <Row xs={1} md={2} className="g-4">
+                {[1,2,3,4].map((id) => (
+                    <Col md={4} key={id}>
+                        <Product loading={true} />
+                    </Col>
+                ))}
+            </Row>
+        );
     }
 
     if (products.length <= 0) {
