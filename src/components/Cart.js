@@ -6,6 +6,7 @@ import { Fragment } from 'react';
 import PriceDisplay from "./PriceDisplay"
 import { Button } from 'react-bootstrap';
 import { Trash } from 'react-bootstrap-icons';
+import { Link } from 'react-router-dom';
 
 export default function Cart() {
     const { cartItems, removeCartItem } = useCart();
@@ -48,7 +49,7 @@ export default function Cart() {
                             }
 
                             return (
-                                <li className='Cart-item' key={product.id}>{product.title}{(item.amount > 1 ? ` (${item.amount} pcs)` : '')}<Button className='Cart-item-remove' variant="danger" size="sm" onClick={() => removeCartItem(product.id)}><Trash /></Button></li>
+                                <li className='Cart-item' key={product.id}><Link to={`/products/${product.id}`}>{product.title}</Link>{(item.amount > 1 ? ` (${item.amount} pcs)` : '')}<Button className='Cart-item-remove' variant="danger" size="sm" onClick={() => removeCartItem(product.id)}><Trash /></Button></li>
                             );
                         })}
                     </ul>

@@ -5,6 +5,7 @@ import { setupServer } from 'msw/node'
 import { render, waitFor, screen } from "@testing-library/react";
 import { CartContext } from "../context/cartContext";
 import { makeAbsoluteUrl } from "../api/shopApi";
+import TestWrapper from "./TestWrapper";
 
 const mockProducts = [
     {
@@ -67,15 +68,17 @@ it("should render products and amounts if cart is not empty", async () => {
         }];
 
     render(
-        <CartContext.Provider value={{ cartItems, cartStateLoaded: true }}>
-            <Cart />
-        </CartContext.Provider>
+        <TestWrapper>
+            <CartContext.Provider value={{ cartItems, cartStateLoaded: true }}>
+                <Cart />
+            </CartContext.Provider>
+        </TestWrapper>
     );
 
     await waitFor(() => {
         expect(screen.getByText(/Choc-o-Milk/i)).toBeInTheDocument();
-        expect(screen.queryByText(/Choc-o-Milk \(1 pc\)/i)).not.toBeInTheDocument();
-        expect(screen.getByText(/Corn Flakes \(5 pcs\)/i)).toBeInTheDocument();
+        expect(screen.getByText(/Corn Flakes/i)).toBeInTheDocument();
+        expect(screen.getByText(/\(5 pcs\)/i)).toBeInTheDocument();
         expect(screen.getByText(/Total:.*/i)).toBeInTheDocument();
     });
 });
