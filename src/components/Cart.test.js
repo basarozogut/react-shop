@@ -74,9 +74,8 @@ it("should render products and amounts if cart is not empty", async () => {
 
     await waitFor(() => {
         expect(screen.getByText(/Choc-o-Milk/i)).toBeInTheDocument();
-        expect(screen.getByText(/1 pc/i)).toBeInTheDocument();
-        expect(screen.getByText(/Corn Flakes/i)).toBeInTheDocument();
-        expect(screen.getByText(/5 pcs/i)).toBeInTheDocument();
+        expect(screen.queryByText(/Choc-o-Milk \(1 pc\)/i)).not.toBeInTheDocument();
+        expect(screen.getByText(/Corn Flakes \(5 pcs\)/i)).toBeInTheDocument();
         expect(screen.getByText(/Total:.*/i)).toBeInTheDocument();
     });
 });
