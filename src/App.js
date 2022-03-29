@@ -1,4 +1,4 @@
-import './App.css';
+import './App.scss';
 import { Badge, Button, Col, Container, Offcanvas, Row } from 'react-bootstrap';
 import Logo from './components/Logo';
 import ProductSearch from './components/ProductSearch'

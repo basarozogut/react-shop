@@ -1,4 +1,8 @@
+@use '../base';
+
 .AddToCartButton {
+    background-color: base.$primary-color;
+    border-color: base.$secondary-color;
     transform-origin: center;
     transition: .05s ease-out;
 }

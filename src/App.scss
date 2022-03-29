@@ -1,10 +1,12 @@
+@use 'base';
+
 .App-container {
     font-family: 'Mulish', sans-serif;
 }
 
 .App-header {
     padding: 0;
-    background-color: #2ce6cd;
+    background-color: base.$primary-color;
 }
 
 .App-header-logo-container {
@@ -29,5 +31,5 @@
 
 .App-header-categories {
     margin-top: 10px;
-    background-color: #20a1a5;
+    background-color: base.$secondary-color;
 }

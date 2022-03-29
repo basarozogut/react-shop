@@ -1,4 +1,4 @@
-import './AddToCartButton.css';
+import './AddToCartButton.scss';
 import { Button } from "react-bootstrap";
 import useCart from "../hooks/useCart";
 
