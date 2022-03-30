@@ -10,6 +10,14 @@
     color: #b1ffd4;
 }
 
+.Categories a:focus {
+    color: #ffffff;
+}
+
+.Categories .active {
+    background-color: black;
+}
+
 .Categories-nav-item-placeholder {
     margin: 0 10px 0 0;
 }

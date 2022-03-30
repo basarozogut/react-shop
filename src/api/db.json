@@ -49,6 +49,26 @@
             "category": "electronics",
             "detailImageUrls": [],
             "longDescription": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In nibh dui, varius sit amet ex non, interdum imperdiet purus. Nunc sit amet sollicitudin elit. Pellentesque justo augue, ultricies id fringilla at, commodo ut mauris. Praesent efficitur pharetra lorem vel accumsan. Aenean sollicitudin euismod magna et iaculis. Maecenas id aliquam nisi, a lobortis velit. Aliquam nec egestas orci. Curabitur auctor felis ut porttitor aliquet. Suspendisse potenti."
+        },
+        {
+            "id": 201,
+            "title": "Regular Fridge",
+            "shortDescription": "A regular sized fridge.",
+            "price": 139.99,
+            "imageUrl": "",
+            "category": "applicances",
+            "detailImageUrls": [],
+            "longDescription": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In nibh dui, varius sit amet ex non, interdum imperdiet purus. Nunc sit amet sollicitudin elit. Pellentesque justo augue, ultricies id fringilla at, commodo ut mauris. Praesent efficitur pharetra lorem vel accumsan. Aenean sollicitudin euismod magna et iaculis. Maecenas id aliquam nisi, a lobortis velit. Aliquam nec egestas orci. Curabitur auctor felis ut porttitor aliquet. Suspendisse potenti."
+        },
+        {
+            "id": 202,
+            "title": "Large Fridge",
+            "shortDescription": "A large fridge with two doors.",
+            "price": 199.99,
+            "imageUrl": "",
+            "category": "applicances",
+            "detailImageUrls": [],
+            "longDescription": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In nibh dui, varius sit amet ex non, interdum imperdiet purus. Nunc sit amet sollicitudin elit. Pellentesque justo augue, ultricies id fringilla at, commodo ut mauris. Praesent efficitur pharetra lorem vel accumsan. Aenean sollicitudin euismod magna et iaculis. Maecenas id aliquam nisi, a lobortis velit. Aliquam nec egestas orci. Curabitur auctor felis ut porttitor aliquet. Suspendisse potenti."
         }
     ],
     "categories": [

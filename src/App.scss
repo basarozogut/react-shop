@@ -1,6 +1,6 @@
 @use 'base';
 
-.App-container {
+.App-header, .App-main {
     font-family: 'Mulish', sans-serif;
 }
 
@@ -26,7 +26,8 @@
 }
 
 .App-outlet-container {
-    padding: 10px 0 10px 0;
+    background-color: #ffffff;
+    padding: 25px;
 }
 
 .App-header-categories {
